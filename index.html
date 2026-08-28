@@ -1,205 +1,108 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 7.2.0"></head>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I3oyCHEN 的个人数字花园：技术笔记、光影片段、网站收藏与公开计划。">
+  <meta name="theme-color" content="#101713">
+  <title>I3oyCHEN · 数字花园</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div class="background-layer" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header class="site-header" aria-label="网站页眉">
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="brand-mark" aria-hidden="true">I3</span>
+        <span><strong>I3oyCHEN</strong><small>Personal archive</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主要导航">
+        <a href="#garden">花园</a>
+        <a href="#latest">最近记录</a>
+        <a href="#about">关于</a>
       </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
+      <button class="icon-button" id="open-background" type="button" aria-haspopup="dialog" aria-controls="background-panel">
+        <span aria-hidden="true">◐</span><span class="button-label">背景</span>
+      </button>
+    </header>
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/03/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-06-03T15:50:24.776Z" itemprop="datePublished">2024-06-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/03/hello-world/">Hello World</a>
-    </h1>
-  
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <p class="eyebrow">DIGITAL GARDEN · 公开生长中</p>
+        <h1 id="hero-title">收集知识，也收集<br><em>让我停下来的瞬间。</em></h1>
+        <p class="hero-copy">这里不是按时间匆匆流走的博客，而是一座持续整理的个人花园。笔记、画面、台词、链接和计划，会在这里慢慢长出联系。</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#garden">开始漫游 <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="#latest">查看最近记录 <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-note" aria-label="今日短句">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote id="daily-quote">把值得记住的事，放在看得见的地方。</blockquote>
+        </div>
+      </section>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+      <section class="garden section-block" id="garden" aria-labelledby="garden-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">THE GARDEN</p><h2 id="garden-title">从哪里开始？</h2></div>
+          <p>选择一个区域，或在下面直接搜索整座花园。</p>
+        </div>
+        <div class="category-grid" id="category-grid" aria-label="内容分类"></div>
+      </section>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+      <section class="archive section-block" id="latest" aria-labelledby="archive-title">
+        <div class="section-heading archive-heading">
+          <div><p class="eyebrow">RECENT NOTES</p><h2 id="archive-title">最近记录</h2></div>
+          <p id="result-count" aria-live="polite"></p>
+        </div>
+        <div class="search-panel" role="search">
+          <label class="search-box" for="search-input">
+            <span aria-hidden="true">⌕</span><span class="sr-only">搜索花园</span>
+            <input id="search-input" type="search" autocomplete="off" placeholder="搜索标题、摘要或标签…">
+            <kbd aria-hidden="true">/</kbd>
+          </label>
+          <div class="filter-list" id="filter-list" aria-label="按分类筛选"></div>
+        </div>
+        <div class="entry-grid" id="entry-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <p>没有找到匹配的记录。</p>
+          <button class="text-button" id="clear-search" type="button">清除搜索与筛选</button>
+        </div>
+      </section>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+      <section class="about section-block" id="about" aria-labelledby="about-title">
+        <div><p class="eyebrow">ABOUT THIS PLACE</p><h2 id="about-title">一间面向世界的私人书房</h2></div>
+        <div class="about-copy">
+          <p>这是 I3oyCHEN 的公开数字花园。内容不追求固定主题，也不要求一次写完；它更像一张不断修订的个人地图。</p>
+          <p class="privacy-note"><strong>公开提醒：</strong>这个网站和仓库对所有人可见。日程区只适合发布愿意公开的计划，不应放入住址、联系方式、账号信息或其他隐私数据。</p>
+        </div>
+      </section>
+    </main>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/03/hello-world/" data-id="clwz5v2n9000060ucb9vn4w7d" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
+    <footer class="site-footer">
+      <p>© <span id="current-year"></span> I3oyCHEN</p>
+      <p>Curated slowly · Hosted on GitHub Pages</p>
     </footer>
   </div>
-  
-</article>
 
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li></ul>
+  <dialog class="background-panel" id="background-panel" aria-labelledby="background-title">
+    <form method="dialog" class="panel-head">
+      <div><p class="eyebrow">APPEARANCE</p><h2 id="background-title">选择一片天色</h2></div>
+      <button class="close-button" value="close" aria-label="关闭背景面板">×</button>
+    </form>
+    <div class="background-options" id="background-options" role="radiogroup" aria-label="预设背景"></div>
+    <div class="custom-background">
+      <div><strong>使用本地图片</strong><p>图片只保存在当前浏览器，不会上传到网站。</p></div>
+      <label class="upload-button" for="background-upload">选择图片</label>
+      <input id="background-upload" type="file" accept="image/jpeg,image/png,image/webp,image/avif" hidden>
     </div>
-  </div>
+    <p class="upload-status" id="upload-status" aria-live="polite"></p>
+  </dialog>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/06/03/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
+  <noscript>请启用 JavaScript，以使用内容筛选、搜索和背景切换功能。</noscript>
+  <script src="content/site-content.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
+
