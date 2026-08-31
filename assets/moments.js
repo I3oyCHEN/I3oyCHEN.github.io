@@ -32,7 +32,7 @@
   document.querySelectorAll(".scene-image img").forEach((image) => {
     image.addEventListener("error", () => {
       image.closest(".scene-image").classList.add("image-unavailable");
-      image.alt = "外部剧照暂时无法加载；请使用场景来源链接查看";
+      image.alt = "剧照暂时无法显示";
     });
   });
 
