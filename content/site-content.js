@@ -16,7 +16,7 @@ window.GARDEN_CONTENT = {
     { title: "技术笔记区", category: "knowledge", date: "2026-08-28", summary: "用于整理控制、嵌入式与工程实践。后续内容会从真实问题出发，而不是按教程模板堆叠。", tags: ["工程", "笔记"], url: "#garden" },
     { title: "白厅留声：是，大臣", category: "moments", date: "2026-08-31", summary: "吉姆·哈克、汉弗莱爵士与伯纳德在权力、程序和语言之间的经典交锋，中英双语整理。", tags: ["是大臣", "英剧", "经典台词"], url: "moments/yes-minister.html#quotes" },
     { title: "白厅留声：是，首相", category: "moments", date: "2026-08-31", summary: "从大臣办公室到唐宁街十号：精选高清剧照与白厅式政治幽默。", tags: ["是首相", "剧照", "白厅"], url: "moments/yes-minister.html#stills" },
-    { title: "动画名场面：剑光、对白与青春", category: "moments", date: "2026-08-31", summary: "从誓约胜利之剑、开罗决战到侍奉部的真物与七剑合璧：八帧高清画面，配原语言短台词和中文翻译。", tags: ["动画", "名场面", "双语台词"], url: "moments/anime-scenes.html" },
+    { title: "Fate 名场面：誓约胜利之剑", category: "moments", date: "2026-08-31", summary: "保留 Saber 解放誓约胜利之剑的 1920 × 1080 画面，并配日文短句、中文译法与剧集定位。", tags: ["Fate", "Saber", "双语台词"], url: "moments/anime-scenes.html" },
     { title: "有用网站收藏夹", category: "links", date: "2026-08-28", summary: "不只保存链接，还记录它为什么有用、适合什么场景，以及再次找到它的关键词。", tags: ["工具", "资源"], url: "#garden" },
     { title: "下一步：种下第一批真实内容", category: "plans", date: "2026-08-28", summary: "用真实笔记替换示例记录，选择一张长期背景，并逐步建立内容之间的连接。", tags: ["待办", "公开计划"], url: "#garden" }
   ],
@@ -27,4 +27,3 @@ window.GARDEN_CONTENT = {
     { id: "classic", name: "旧日", description: "保留原站照片", color: "#59646d" }
   ]
 };
-

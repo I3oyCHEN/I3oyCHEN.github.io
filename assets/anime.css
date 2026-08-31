@@ -35,6 +35,7 @@ h1,h2,h3 { margin:0; }
 .filters button { border:1px solid var(--line); border-radius:999px; padding:.55rem 1rem; background:transparent; color:var(--muted); cursor:pointer; }
 .filters button:hover,.filters button.is-active { border-color:var(--red); background:var(--red); color:#fff; }
 .scene-grid { max-width:1500px; margin:auto; display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(2rem,5vw,5rem) clamp(1rem,2.6vw,2.5rem); }
+.scene-grid--single .scene-card { grid-column:1/-1; }
 .scene-card { grid-column:span 5; min-width:0; }
 .scene-card--wide { grid-column:span 7; }
 .scene-card[hidden] { display:none; }
