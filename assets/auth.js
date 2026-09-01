@@ -2,58 +2,43 @@
   "use strict";
 
   const ROLE_KEY = "i3:role";
-  const MANAGER_KEY = "i3:manager-key";
+  const MANAGER_KEY = "i3:manager-session";
   let changeHandler = () => {};
   let dialog;
 
   const fromBase64 = (value) => Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
-  const toBase64 = (bytes) => {
-    let binary = "";
-    bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
-    return btoa(binary);
-  };
-
+  const sameBytes = (left, right) => left.length === right.length && left.every((byte, index) => byte === right[index]);
   const role = () => sessionStorage.getItem(ROLE_KEY);
-  const isManager = () => role() === "manager" && Boolean(sessionStorage.getItem(MANAGER_KEY));
-
-  const decryptWithKey = async (rawKey) => {
-    const payload = window.INNER_WAY_ENCRYPTED;
-    if (!payload) throw new Error("missing payload");
-    const key = await crypto.subtle.importKey("raw", rawKey, { name: "AES-GCM" }, false, ["decrypt"]);
-    const plain = await crypto.subtle.decrypt(
-      { name: "AES-GCM", iv: fromBase64(payload.iv) },
-      key,
-      fromBase64(payload.ciphertext)
-    );
-    return JSON.parse(new TextDecoder().decode(plain));
-  };
+  const isManager = () => role() === "manager" && sessionStorage.getItem(MANAGER_KEY) === "verified";
 
   const verifyManager = async (password) => {
-    const payload = window.INNER_WAY_ENCRYPTED;
-    const material = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveKey"]);
-    const key = await crypto.subtle.deriveKey(
-      { name: "PBKDF2", salt: fromBase64(payload.salt), iterations: payload.iterations, hash: "SHA-256" },
+    const config = window.I3_AUTH_CONFIG;
+    if (!config) throw new Error("missing authentication config");
+    const material = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveBits"]);
+    const bits = await crypto.subtle.deriveBits(
+      { name: "PBKDF2", salt: fromBase64(config.salt), iterations: config.iterations, hash: "SHA-256" },
       material,
-      { name: "AES-GCM", length: 256 },
-      true,
-      ["decrypt"]
+      256
     );
-    const rawKey = new Uint8Array(await crypto.subtle.exportKey("raw", key));
-    await decryptWithKey(rawKey);
+    if (!sameBytes(new Uint8Array(bits), fromBase64(config.verifier))) throw new Error("invalid passphrase");
     sessionStorage.setItem(ROLE_KEY, "manager");
-    sessionStorage.setItem(MANAGER_KEY, toBase64(rawKey));
+    sessionStorage.setItem(MANAGER_KEY, "verified");
+    sessionStorage.removeItem("i3:manager-key");
   };
 
   const applyRole = () => {
     const manager = isManager();
     document.querySelectorAll("[data-manager-only]").forEach((element) => { element.hidden = !manager; });
-    document.querySelectorAll("[data-role-button]").forEach((button) => { button.textContent = manager ? "管理者" : role() === "visitor" ? "游客" : "选择身份"; });
+    document.querySelectorAll("[data-role-button]").forEach((button) => {
+      button.textContent = manager ? "管理者" : role() === "visitor" ? "游客" : "选择身份";
+    });
     changeHandler({ role: manager ? "manager" : "visitor", manager });
   };
 
   const chooseVisitor = () => {
     sessionStorage.setItem(ROLE_KEY, "visitor");
     sessionStorage.removeItem(MANAGER_KEY);
+    sessionStorage.removeItem("i3:manager-key");
     sessionStorage.removeItem("i3:github-token");
     dialog.hidden = true;
     applyRole();
@@ -79,7 +64,6 @@
         <button class="role-close" type="button" aria-label="关闭">×</button>
         <p class="role-kicker">ACCESS</p>
         <h2 id="role-title">访问方式</h2>
-        <p>选择本次浏览身份。</p>
         <div class="role-options">
           <button type="button" data-visitor>游客进入</button>
           <button type="button" data-manager>管理者进入</button>
@@ -124,16 +108,5 @@
     if (!role()) show(false);
   };
 
-  const getManagerKey = () => {
-    const value = sessionStorage.getItem(MANAGER_KEY);
-    return value ? fromBase64(value) : null;
-  };
-
-  const decryptInnerData = async () => {
-    const key = getManagerKey();
-    if (!key) throw new Error("manager session required");
-    return decryptWithKey(key);
-  };
-
-  window.I3Auth = { mount, isManager, role, showRoleDialog: show, getManagerKey, decryptInnerData, chooseVisitor };
+  window.I3Auth = { mount, isManager, role, showRoleDialog: show, chooseVisitor };
 })();

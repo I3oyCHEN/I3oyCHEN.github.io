@@ -10,6 +10,7 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/auth.css">
   <link rel="stylesheet" href="../assets/portal.css">
+  <link rel="stylesheet" href="../assets/editor.css">
 </head>
 <body>
   <a class="skip-link" href="#plans-main">跳到计划表</a>
@@ -18,7 +19,7 @@
     <nav class="portal-nav" aria-label="分组入口">
       <a href="../index.html">首页</a>
       <a href="../gallery/index.html">图库</a>
-      <a href="../moments/yes-minister.html">图片与台词</a>
+      <a href="../moments/index.html">台词</a>
       <a href="../settings/index.html" data-manager-only hidden>设置</a>
     </nav>
     <button class="role-button" type="button" data-role-button>选择身份</button>
@@ -36,6 +37,7 @@
       <p>切换到编辑状态后，可直接修改时间段、星期名称和每个格子的内容。</p>
       <div class="button-row">
         <button class="button button--primary" id="edit-plan" type="button">开始编辑</button>
+        <button class="button" id="append-slot" type="button" hidden>添加时段</button>
         <button class="button" id="save-plan" type="button" hidden>保存到本机</button>
         <button class="button" id="publish-plan" type="button" hidden>发布到网站</button>
         <button class="button" id="cancel-plan" type="button" hidden>取消</button>
@@ -48,7 +50,7 @@
   </main>
 
   <footer class="portal-footer"><span>I3oyCHEN · 计划</span><a href="../index.html">返回首页 ↑</a></footer>
-  <script src="../content/inner-way.enc.js"></script>
+  <script src="../content/auth-config.js"></script>
   <script src="../assets/auth.js"></script>
   <script src="../assets/theme.js"></script>
   <script src="../assets/github-admin.js"></script>

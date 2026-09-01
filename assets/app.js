@@ -20,7 +20,7 @@
       const link = document.createElement("a");
       link.className = "group-card";
       link.href = group.url;
-      link.innerHTML = `<span class="group-icon" aria-hidden="true">${group.icon}</span><small>${group.english}</small><h3>${group.name}</h3><p>${group.description}</p><span class="group-arrow" aria-hidden="true">↗</span>`;
+      link.innerHTML = `<span class="group-icon" aria-hidden="true">${group.icon}</span><small>${group.english}</small><h3>${group.name}</h3><span class="group-arrow" aria-hidden="true">↗</span>`;
       grid.append(link);
     });
   };
@@ -41,7 +41,7 @@
           wall.classList.remove("is-transitioning");
         }, 1050);
       }
-      caption.textContent = item.title;
+      caption.textContent = item.note ? `${item.title} · ${item.note}` : item.title;
       indexText.textContent = String(index + 1).padStart(2, "0");
     };
     image.src = item.src;

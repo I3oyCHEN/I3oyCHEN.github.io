@@ -10,6 +10,7 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/auth.css">
   <link rel="stylesheet" href="../assets/portal.css">
+  <link rel="stylesheet" href="../assets/editor.css">
 </head>
 <body>
   <a class="skip-link" href="#gallery-main">跳到图库</a>
@@ -17,7 +18,7 @@
     <a class="brand" href="../index.html"><span class="brand-mark">I3</span><span><strong>I3oyCHEN</strong><small>Personal archive</small></span></a>
     <nav class="portal-nav" aria-label="分组入口">
       <a href="../index.html">首页</a>
-      <a href="../moments/yes-minister.html">图片与台词</a>
+      <a href="../moments/index.html">台词</a>
       <a href="../plans/index.html">计划</a>
       <a href="../settings/index.html" data-manager-only hidden>设置</a>
     </nav>
@@ -54,6 +55,15 @@
       </form>
     </section>
 
+    <section class="admin-panel" data-manager-only hidden aria-labelledby="manage-gallery-title">
+      <h2 id="manage-gallery-title">整理图库</h2>
+      <p>直接修改每张图片下方的名称、备注和照片墙状态。</p>
+      <div class="button-row">
+        <button class="button button--primary" id="save-gallery" type="button">发布图库信息</button>
+      </div>
+      <p class="form-status" id="gallery-status" role="status" aria-live="polite"></p>
+    </section>
+
     <div class="section-heading">
       <h2>全部图像</h2>
       <p id="gallery-count"></p>
@@ -68,7 +78,7 @@
   </dialog>
 
   <footer class="portal-footer"><span>I3oyCHEN · 图库</span><a href="../index.html">返回首页 ↑</a></footer>
-  <script src="../content/inner-way.enc.js"></script>
+  <script src="../content/auth-config.js"></script>
   <script src="../assets/auth.js"></script>
   <script src="../assets/theme.js"></script>
   <script src="../assets/github-admin.js"></script>

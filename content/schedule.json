@@ -11,11 +11,11 @@
     { "id": "sun", "label": "周日" }
   ],
   "slots": [
-    { "id": "morning", "label": "上午", "time": "08:30–12:00" },
-    { "id": "noon", "label": "午间", "time": "12:00–13:30" },
-    { "id": "afternoon", "label": "下午", "time": "13:30–17:30" },
-    { "id": "evening-a", "label": "晚间 I", "time": "19:30–21:00" },
-    { "id": "evening-b", "label": "晚间 II", "time": "21:00–23:00" }
+    { "id": "morning", "label": "上午", "start": "08:30", "end": "12:00" },
+    { "id": "noon", "label": "午间", "start": "12:00", "end": "13:30" },
+    { "id": "afternoon", "label": "下午", "start": "13:30", "end": "17:30" },
+    { "id": "evening-a", "label": "晚间 I", "start": "19:30", "end": "21:00" },
+    { "id": "evening-b", "label": "晚间 II", "start": "21:00", "end": "23:00" }
   ],
   "cells": {
     "morning": { "mon": "工作", "tue": "工作", "wed": "工作", "thu": "工作", "fri": "工作", "sat": "大小周：工作 / 休息", "sun": "睡眠 / 早餐" },

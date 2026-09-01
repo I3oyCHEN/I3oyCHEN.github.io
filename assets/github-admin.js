@@ -75,7 +75,7 @@
     const stamp = new Date().toISOString().replace(/[-:.TZ]/g, "").slice(0, 14);
     const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 32) || "image";
     const repoPath = `assets/gallery/upload-${stamp}-${slug}.webp`;
-    manifest.unshift({ id: `upload-${stamp}`, title, src: `/${repoPath}`, wall: Boolean(wall) });
+    manifest.unshift({ id: `upload-${stamp}`, title, note: "", src: `/${repoPath}`, wall: Boolean(wall) });
     const [imageBlob, manifestBlob] = await Promise.all([
       request("/git/blobs", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ content: bytesToBase64(imageBytes), encoding: "base64" }) }),
       request("/git/blobs", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ content: JSON.stringify(manifest, null, 2) + "\n", encoding: "utf-8" }) })
