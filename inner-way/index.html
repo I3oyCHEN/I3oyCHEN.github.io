@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#090b13">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  <title>内圣之道 · I3oyCHEN</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/inner-way.css">
+</head>
+<body>
+  <a class="skip-link" href="#inner-content">跳到正文</a>
+  <header class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">I3</span><span><strong>I3oyCHEN</strong><small>Personal archive</small></span></a>
+    <p>内圣之道</p>
+    <button class="lock-page" id="lock-page" type="button" hidden>锁定</button>
+  </header>
+
+  <main>
+    <section class="gate" id="gate" aria-labelledby="gate-title">
+      <div class="gate-panel">
+        <p class="kicker">INNER WAY</p>
+        <h1 id="gate-title">内圣之道</h1>
+        <p class="coordinates">时间 / 欲望 / 恐惧 / 行动</p>
+        <form class="unlock-form" id="unlock-form">
+          <label for="passphrase">口令</label>
+          <div class="passphrase-row">
+            <input id="passphrase" name="passphrase" type="password" inputmode="numeric" autocomplete="current-password" required autofocus>
+            <button type="submit">进入</button>
+          </div>
+          <p class="gate-status" id="gate-status" role="alert" aria-live="polite"></p>
+        </form>
+      </div>
+      <p class="gate-index">01 — 04</p>
+    </section>
+
+    <article class="archive" id="inner-content" hidden>
+      <section class="archive-hero">
+        <div class="archive-hero-copy">
+          <p class="kicker">PERSONAL REFLECTION</p>
+          <h1 id="archive-title"></h1>
+          <p class="archive-subtitle" id="archive-subtitle"></p>
+        </div>
+      </section>
+
+      <div class="reading-shell">
+        <section class="portrait" aria-labelledby="portrait-title">
+          <div class="section-heading">
+            <p class="section-number">00</p>
+            <div><p class="kicker">PORTRAIT</p><h2 id="portrait-title">此刻的自我画像</h2></div>
+          </div>
+          <div class="portrait-grid" id="portrait-grid"></div>
+        </section>
+
+        <nav class="topic-nav" id="topic-nav" aria-label="主题目录"></nav>
+        <div id="qa-sections"></div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="site-footer" hidden>
+    <p>I3oyCHEN · 内圣之道</p>
+    <a href="../index.html">返回数字花园 ↑</a>
+  </footer>
+
+  <noscript>需要启用 JavaScript。</noscript>
+  <script src="../content/inner-way.enc.js"></script>
+  <script src="../assets/inner-way.js"></script>
+</body>
+</html>

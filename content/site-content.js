@@ -2,6 +2,7 @@ window.GARDEN_CONTENT = {
   categories: [
     { id: "knowledge", name: "技术知识", english: "Knowledge", icon: "⌁", description: "控制、嵌入式与工程实践。", accent: "mint" },
     { id: "moments", name: "图片与台词", english: "Moments", icon: "◫", description: "影视、动画画面与双语台词。", accent: "amber" },
+    { id: "reflection", name: "自省", english: "Reflection", icon: "◉", description: "时间、欲望、恐惧与行动。", accent: "rose" },
     { id: "links", name: "网站收藏", english: "Bookmarks", icon: "↗", description: "工具、资料与灵感来源。", accent: "blue" },
     { id: "plans", name: "计划", english: "Plans", icon: "✓", description: "阶段目标、待办与进度。", accent: "rose" }
   ],
@@ -10,6 +11,7 @@ window.GARDEN_CONTENT = {
     { title: "白厅留声：是，大臣", category: "moments", date: "2026-08-31", summary: "《是，大臣》第一季第 1、3 集与第三季第 4 集；剧照及中英双语台词。", tags: ["是大臣", "英剧", "经典台词"], url: "moments/yes-minister.html#scenes" },
     { title: "白厅留声：是，首相", category: "moments", date: "2026-08-31", summary: "《是，首相》第二季第 2、4 集；剧照及中英双语台词。", tags: ["是首相", "剧照", "白厅"], url: "moments/yes-minister.html#scenes" },
     { title: "Fate：誓约胜利之剑", category: "moments", date: "2026-08-31", summary: "Fate/stay night [Unlimited Blade Works] 第 24 集 · 约 19–21′。", tags: ["Fate", "Saber", "双语台词"], url: "moments/anime-scenes.html" },
+    { title: "内圣之道", category: "reflection", date: "2026-09-01", summary: "时间管理、兴趣选择、完美主义、职业焦虑与行动准则。", tags: ["自省", "问答", "加密"], url: "inner-way/index.html" },
     { title: "有用网站收藏夹", category: "links", date: "2026-08-28", summary: "工具、资料与灵感来源，附用途和关键词。", tags: ["工具", "资源"], url: "#garden" },
     { title: "数字花园路线图", category: "plans", date: "2026-08-28", summary: "阶段目标、待办事项与进度记录。", tags: ["待办", "计划"], url: "#garden" }
   ],
