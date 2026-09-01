@@ -1,0 +1,27 @@
+{
+  "title": "周计划",
+  "subtitle": "工作 / 学习 / 社交 / 创作 / 留白",
+  "days": [
+    { "id": "mon", "label": "周一" },
+    { "id": "tue", "label": "周二" },
+    { "id": "wed", "label": "周三" },
+    { "id": "thu", "label": "周四" },
+    { "id": "fri", "label": "周五" },
+    { "id": "sat", "label": "周六" },
+    { "id": "sun", "label": "周日" }
+  ],
+  "slots": [
+    { "id": "morning", "label": "上午", "time": "08:30–12:00" },
+    { "id": "noon", "label": "午间", "time": "12:00–13:30" },
+    { "id": "afternoon", "label": "下午", "time": "13:30–17:30" },
+    { "id": "evening-a", "label": "晚间 I", "time": "19:30–21:00" },
+    { "id": "evening-b", "label": "晚间 II", "time": "21:00–23:00" }
+  ],
+  "cells": {
+    "morning": { "mon": "工作", "tue": "工作", "wed": "工作", "thu": "工作", "fri": "工作", "sat": "大小周：工作 / 休息", "sun": "睡眠 / 早餐" },
+    "noon": { "mon": "午休", "tue": "午休", "wed": "短阅读", "thu": "午休", "fri": "午休", "sat": "午餐 / 留白", "sun": "自由安排" },
+    "afternoon": { "mon": "工作", "tue": "工作", "wed": "工作", "thu": "工作", "fri": "工作", "sat": "模型 / 大块项目", "sun": "出游 / 收拾屋子" },
+    "evening-a": { "mon": "社交游戏", "tue": "散步 / 练字", "wed": "伺服学习", "thu": "留白 / 剧情", "fri": "Blender / 模型", "sat": "模型 / 战锤", "sun": "下周准备" },
+    "evening-b": { "mon": "聊天 / 放松", "tue": "自由活动", "wed": "笔记整理", "thu": "自由活动", "fri": "创作延续", "sat": "自由活动", "sun": "休息" }
+  }
+}

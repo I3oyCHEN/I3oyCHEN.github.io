@@ -1,0 +1,17 @@
+.role-dialog[hidden] { display: none !important; }
+.role-dialog { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; background: rgba(3,5,7,.84); backdrop-filter: blur(18px); }
+.role-panel { position: relative; width: min(100%, 460px); padding: clamp(1.6rem,5vw,2.7rem); border: 1px solid rgba(255,255,255,.2); border-radius: 24px; background: #111719; box-shadow: 0 30px 90px rgba(0,0,0,.45); color: #eef2ed; }
+.role-panel .role-kicker { margin: 0 0 .5rem; color: #bde8b0; font-size: .66rem; font-weight: 750; letter-spacing: .2em; }
+.role-panel h2 { margin: 0; font: 700 clamp(2.4rem,8vw,4rem)/1.05 Georgia,"Songti SC",serif; }
+.role-panel > p { color: #9ca8a2; }
+.role-options { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 2rem; }
+.role-options button,.manager-form button { min-height: 50px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: transparent; color: inherit; cursor: pointer; font: inherit; }
+.role-options button:hover,.manager-form button:hover { border-color: #bde8b0; background: #bde8b0; color: #0b100d; }
+.manager-form { margin-top: 1rem; }
+.manager-form label { display: block; margin-bottom: .45rem; color: #9ca8a2; font-size: .72rem; }
+.manager-row { display: grid; grid-template-columns: 1fr auto; gap: .55rem; }
+.manager-row input { min-width: 0; padding: .8rem 1rem; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; background: rgba(255,255,255,.05); color: inherit; font: inherit; letter-spacing: .2em; }
+.manager-row button { min-width: 92px; }
+.manager-status { min-height: 1.5rem; margin: .7rem 0 0; color: #e99b9b; font-size: .72rem; }
+.role-close { position: absolute; right: 1rem; top: 1rem; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; background: transparent; color: inherit; cursor: pointer; }
+@media (max-width: 520px) { .role-options { grid-template-columns: 1fr; } }

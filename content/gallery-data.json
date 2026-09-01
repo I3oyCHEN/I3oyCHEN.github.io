@@ -1,0 +1,11 @@
+[
+  { "id": "violet-evergarden", "title": "紫罗兰永恒花园", "src": "/assets/gallery/violet-evergarden.webp", "wall": true },
+  { "id": "caesar-death", "title": "“凯撒之死”", "src": "/assets/gallery/caesar-death.webp", "wall": true },
+  { "id": "rengoku", "title": "炼狱杏寿郎", "src": "/assets/gallery/rengoku.webp", "wall": true },
+  { "id": "sniper", "title": "狙击手", "src": "/assets/gallery/sniper.webp", "wall": true },
+  { "id": "faye-valentine", "title": "Faye Valentine", "src": "/assets/gallery/faye-valentine.webp", "wall": true },
+  { "id": "robin", "title": "知更鸟", "src": "/assets/gallery/robin.webp", "wall": true },
+  { "id": "blue-portrait", "title": "蓝衣少女", "src": "/assets/gallery/blue-portrait.webp", "wall": true },
+  { "id": "artemis-ii", "title": "Artemis II", "src": "/assets/gallery/artemis-ii.webp", "wall": true },
+  { "id": "night-drive", "title": "Night Drive", "src": "/assets/gallery/night-drive.webp", "wall": true }
+]

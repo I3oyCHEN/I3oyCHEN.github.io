@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#08100c">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+  <title>网站设置 · I3oyCHEN</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/auth.css">
+  <link rel="stylesheet" href="../assets/portal.css">
+</head>
+<body>
+  <a class="skip-link" href="#settings-main">跳到设置</a>
+  <header class="portal-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">I3</span><span><strong>I3oyCHEN</strong><small>Personal archive</small></span></a>
+    <nav class="portal-nav" aria-label="分组入口">
+      <a href="../index.html">首页</a>
+      <a href="../gallery/index.html">图库</a>
+      <a href="../plans/index.html">计划</a>
+    </nav>
+    <button class="role-button" type="button" data-role-button>选择身份</button>
+  </header>
+
+  <section class="page-hero">
+    <p class="kicker">SITE CONTROL</p>
+    <h1>网站设置</h1>
+    <p>外观、照片墙与内容发布。</p>
+  </section>
+
+  <main class="portal-main" id="settings-main">
+    <section class="access-card" id="settings-denied">
+      <h2>仅管理者可进入</h2>
+      <p>切换为管理者身份后显示设置。</p>
+      <button class="button button--primary" id="settings-login" type="button">管理者进入</button>
+    </section>
+
+    <div id="settings-content" data-manager-only hidden>
+      <div class="settings-grid">
+        <section class="settings-card">
+          <h2>照片墙</h2>
+          <form id="appearance-form">
+            <div class="field">
+              <label for="background">整体背景</label>
+              <select id="background" name="background"></select>
+            </div>
+            <div class="field">
+              <label for="wall-mode">切换方式</label>
+              <select id="wall-mode" name="wallMode"><option value="auto">自动切换</option><option value="manual">手动切换</option></select>
+            </div>
+            <div class="field">
+              <label for="wall-interval">自动切换频率（秒）</label>
+              <input id="wall-interval" name="wallInterval" type="number" min="3" max="60" step="1">
+            </div>
+            <div class="field">
+              <label for="overlay">背景暗度</label>
+              <div class="range-row"><input id="overlay" name="overlay" type="range" min="20" max="90" step="1"><output id="overlay-output"></output></div>
+            </div>
+            <div class="button-row">
+              <button class="button button--primary" type="submit">应用到本机</button>
+              <button class="button" id="publish-settings" type="button">发布到网站</button>
+              <button class="button" id="restore-settings" type="button">恢复网站设置</button>
+            </div>
+            <p class="form-status" id="settings-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+        <section class="settings-card">
+          <h2>预览</h2>
+          <div class="preview-box" id="background-preview" aria-label="背景预览"></div>
+        </section>
+      </div>
+
+      <section class="settings-card" id="github">
+        <h2>GitHub 连接</h2>
+        <p>用于从本网站发布图库、设置与计划。令牌只保留在当前浏览器会话，不写入网站文件。</p>
+        <form id="token-form">
+          <div class="field">
+            <label for="github-token">Fine-grained personal access token</label>
+            <input id="github-token" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…">
+          </div>
+          <p class="token-note">令牌只需授予 I3oyCHEN.github.io 仓库的 Contents 读写权限。</p>
+          <div class="button-row">
+            <button class="button button--primary" type="submit">连接</button>
+            <button class="button" id="clear-token" type="button">断开</button>
+          </div>
+          <p class="form-status" id="token-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="portal-footer"><span>I3oyCHEN · 网站设置</span><a href="../index.html">返回首页 ↑</a></footer>
+  <script src="../content/inner-way.enc.js"></script>
+  <script src="../assets/auth.js"></script>
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/github-admin.js"></script>
+  <script src="../assets/settings.js"></script>
+</body>
+</html>

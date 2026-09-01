@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#08100c">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+  <title>计划 · I3oyCHEN</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/auth.css">
+  <link rel="stylesheet" href="../assets/portal.css">
+</head>
+<body>
+  <a class="skip-link" href="#plans-main">跳到计划表</a>
+  <header class="portal-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">I3</span><span><strong>I3oyCHEN</strong><small>Personal archive</small></span></a>
+    <nav class="portal-nav" aria-label="分组入口">
+      <a href="../index.html">首页</a>
+      <a href="../gallery/index.html">图库</a>
+      <a href="../moments/yes-minister.html">图片与台词</a>
+      <a href="../settings/index.html" data-manager-only hidden>设置</a>
+    </nav>
+    <button class="role-button" type="button" data-role-button>选择身份</button>
+  </header>
+
+  <section class="page-hero">
+    <p class="kicker">WEEKLY RHYTHM</p>
+    <h1 id="plan-title">计划</h1>
+    <p id="plan-subtitle"></p>
+  </section>
+
+  <main class="portal-main" id="plans-main">
+    <section class="schedule-tools" data-manager-only hidden>
+      <h2>编辑计划</h2>
+      <p>切换到编辑状态后，可直接修改时间段、星期名称和每个格子的内容。</p>
+      <div class="button-row">
+        <button class="button button--primary" id="edit-plan" type="button">开始编辑</button>
+        <button class="button" id="save-plan" type="button" hidden>保存到本机</button>
+        <button class="button" id="publish-plan" type="button" hidden>发布到网站</button>
+        <button class="button" id="cancel-plan" type="button" hidden>取消</button>
+      </div>
+      <p class="form-status" id="plan-status" role="status" aria-live="polite"></p>
+    </section>
+    <div class="section-heading"><h2>一周节律</h2><p>时间只是容器</p></div>
+    <div class="schedule-wrap" id="schedule-wrap"></div>
+    <p class="schedule-note">保留留白；若现实改变，就让计划跟着改变。</p>
+  </main>
+
+  <footer class="portal-footer"><span>I3oyCHEN · 计划</span><a href="../index.html">返回首页 ↑</a></footer>
+  <script src="../content/inner-way.enc.js"></script>
+  <script src="../assets/auth.js"></script>
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/github-admin.js"></script>
+  <script src="../assets/plans.js"></script>
+</body>
+</html>

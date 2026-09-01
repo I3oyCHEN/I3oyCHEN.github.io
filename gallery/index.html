@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#08100c">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'">
+  <title>图库 · I3oyCHEN</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/auth.css">
+  <link rel="stylesheet" href="../assets/portal.css">
+</head>
+<body>
+  <a class="skip-link" href="#gallery-main">跳到图库</a>
+  <header class="portal-header">
+    <a class="brand" href="../index.html"><span class="brand-mark">I3</span><span><strong>I3oyCHEN</strong><small>Personal archive</small></span></a>
+    <nav class="portal-nav" aria-label="分组入口">
+      <a href="../index.html">首页</a>
+      <a href="../moments/yes-minister.html">图片与台词</a>
+      <a href="../plans/index.html">计划</a>
+      <a href="../settings/index.html" data-manager-only hidden>设置</a>
+    </nav>
+    <button class="role-button" type="button" data-role-button>选择身份</button>
+  </header>
+
+  <section class="page-hero">
+    <p class="kicker">IMAGE ARCHIVE</p>
+    <h1>图库</h1>
+    <p>画面、封面、人物与航天图像。</p>
+  </section>
+
+  <main class="portal-main" id="gallery-main">
+    <section class="admin-panel" data-manager-only hidden aria-labelledby="upload-title">
+      <h2 id="upload-title">添加图片</h2>
+      <p>从设备选择图片，保存后会加入图库；勾选照片墙后也会出现在首页。</p>
+      <form id="upload-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="image-title">名称</label>
+            <input id="image-title" name="title" required maxlength="80">
+          </div>
+          <div class="field">
+            <label for="image-file">图片文件</label>
+            <input id="image-file" name="image" type="file" accept="image/jpeg,image/png,image/webp" required>
+          </div>
+          <label class="check-field field--wide"><input id="image-wall" name="wall" type="checkbox" checked> 同时加入首页照片墙</label>
+        </div>
+        <div class="button-row">
+          <button class="button button--primary" type="submit">保存到图库</button>
+          <a class="button" href="../settings/index.html#github">GitHub 连接</a>
+        </div>
+        <p class="form-status" id="upload-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <div class="section-heading">
+      <h2>全部图像</h2>
+      <p id="gallery-count"></p>
+    </div>
+    <section class="gallery-grid" id="gallery-grid" aria-live="polite"></section>
+  </main>
+
+  <dialog class="lightbox" id="lightbox">
+    <button class="lightbox-close" type="button" aria-label="关闭">×</button>
+    <img id="lightbox-image" alt="">
+    <p id="lightbox-caption"></p>
+  </dialog>
+
+  <footer class="portal-footer"><span>I3oyCHEN · 图库</span><a href="../index.html">返回首页 ↑</a></footer>
+  <script src="../content/inner-way.enc.js"></script>
+  <script src="../assets/auth.js"></script>
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/github-admin.js"></script>
+  <script src="../assets/gallery.js"></script>
+</body>
+</html>

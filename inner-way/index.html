@@ -9,6 +9,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
   <title>内圣之道 · I3oyCHEN</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/auth.css">
   <link rel="stylesheet" href="../assets/inner-way.css">
 </head>
 <body>
@@ -16,23 +17,17 @@
   <header class="topbar">
     <a class="brand" href="../index.html"><span class="brand-mark">I3</span><span><strong>I3oyCHEN</strong><small>Personal archive</small></span></a>
     <p>内圣之道</p>
-    <button class="lock-page" id="lock-page" type="button" hidden>锁定</button>
+    <button class="lock-page" type="button" data-role-button>选择身份</button>
   </header>
 
   <main>
-    <section class="gate" id="gate" aria-labelledby="gate-title">
+    <section class="gate" id="manager-required" aria-labelledby="gate-title">
       <div class="gate-panel">
         <p class="kicker">INNER WAY</p>
         <h1 id="gate-title">内圣之道</h1>
         <p class="coordinates">时间 / 欲望 / 恐惧 / 行动</p>
-        <form class="unlock-form" id="unlock-form">
-          <label for="passphrase">口令</label>
-          <div class="passphrase-row">
-            <input id="passphrase" name="passphrase" type="password" inputmode="numeric" autocomplete="current-password" required autofocus>
-            <button type="submit">进入</button>
-          </div>
-          <p class="gate-status" id="gate-status" role="alert" aria-live="polite"></p>
-        </form>
+        <p>仅在管理者模式中显示。</p>
+        <button class="manager-enter" id="manager-enter" type="button">管理者进入</button>
       </div>
       <p class="gate-index">01 — 04</p>
     </section>
@@ -68,6 +63,7 @@
 
   <noscript>需要启用 JavaScript。</noscript>
   <script src="../content/inner-way.enc.js"></script>
+  <script src="../assets/auth.js"></script>
   <script src="../assets/inner-way.js"></script>
 </body>
 </html>

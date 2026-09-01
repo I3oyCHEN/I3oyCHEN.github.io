@@ -1,43 +1,10 @@
 (() => {
   "use strict";
 
-  const payload = window.INNER_WAY_ENCRYPTED;
-  const gate = document.querySelector("#gate");
+  const required = document.querySelector("#manager-required");
   const archive = document.querySelector("#inner-content");
   const footer = document.querySelector("#site-footer");
-  const form = document.querySelector("#unlock-form");
-  const passphrase = document.querySelector("#passphrase");
-  const status = document.querySelector("#gate-status");
-  const lockButton = document.querySelector("#lock-page");
-
-  const fromBase64 = (value) => Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
-
-  const deriveKey = async (password) => {
-    const material = await crypto.subtle.importKey(
-      "raw",
-      new TextEncoder().encode(password),
-      "PBKDF2",
-      false,
-      ["deriveKey"]
-    );
-    return crypto.subtle.deriveKey(
-      { name: "PBKDF2", salt: fromBase64(payload.salt), iterations: payload.iterations, hash: "SHA-256" },
-      material,
-      { name: "AES-GCM", length: 256 },
-      false,
-      ["decrypt"]
-    );
-  };
-
-  const decrypt = async (password) => {
-    const key = await deriveKey(password);
-    const bytes = await crypto.subtle.decrypt(
-      { name: "AES-GCM", iv: fromBase64(payload.iv) },
-      key,
-      fromBase64(payload.ciphertext)
-    );
-    return JSON.parse(new TextDecoder().decode(bytes));
-  };
+  let rendered = false;
 
   const make = (tag, className, text) => {
     const element = document.createElement(tag);
@@ -47,6 +14,8 @@
   };
 
   const render = (data) => {
+    if (rendered) return;
+    rendered = true;
     document.querySelector("#archive-title").textContent = data.title;
     document.querySelector("#archive-subtitle").textContent = data.subtitle;
 
@@ -60,7 +29,6 @@
     const topicNav = document.querySelector("#topic-nav");
     const qaSections = document.querySelector("#qa-sections");
     let questionNumber = 0;
-
     data.sections.forEach((section, sectionIndex) => {
       const link = make("a", "", section.shortTitle);
       link.href = `#${section.id}`;
@@ -69,7 +37,6 @@
       const sectionElement = make("section", "qa-section");
       sectionElement.id = section.id;
       sectionElement.setAttribute("aria-labelledby", `${section.id}-title`);
-
       const heading = make("div", "section-heading");
       heading.append(make("p", "section-number", String(sectionIndex + 1).padStart(2, "0")));
       const headingCopy = make("div", "");
@@ -91,7 +58,6 @@
           make("span", "question-text", item.question),
           make("span", "question-toggle", "+")
         );
-
         const answer = make("div", "answer");
         answer.append(make("p", "answer-label", "答"));
         const answerCopy = make("div", "answer-copy");
@@ -108,34 +74,21 @@
       sectionElement.append(list);
       qaSections.append(sectionElement);
     });
+    document.title = `${data.title} · I3oyCHEN`;
   };
 
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const button = form.querySelector("button");
-    status.textContent = "";
-    button.disabled = true;
-    button.textContent = "解锁中";
+  const updateAccess = async ({ manager }) => {
+    required.hidden = manager;
+    archive.hidden = !manager;
+    footer.hidden = !manager;
+    if (!manager) return;
     try {
-      const data = await decrypt(passphrase.value);
-      render(data);
-      passphrase.value = "";
-      gate.hidden = true;
-      archive.hidden = false;
-      footer.hidden = false;
-      lockButton.hidden = false;
-      document.title = `${data.title} · I3oyCHEN`;
-      archive.focus?.();
-      window.scrollTo({ top: 0, behavior: "auto" });
-    } catch (error) {
-      await new Promise((resolve) => setTimeout(resolve, 700));
-      status.textContent = "口令不正确";
-      passphrase.select();
-    } finally {
-      button.disabled = false;
-      button.textContent = "进入";
+      render(await window.I3Auth.decryptInnerData());
+    } catch {
+      window.I3Auth.chooseVisitor();
     }
-  });
+  };
 
-  lockButton.addEventListener("click", () => window.location.reload());
+  document.querySelector("#manager-enter").addEventListener("click", () => window.I3Auth.showRoleDialog(true));
+  window.I3Auth.mount({ onChange: updateAccess });
 })();

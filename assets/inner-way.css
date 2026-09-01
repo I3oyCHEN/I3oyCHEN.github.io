@@ -33,6 +33,7 @@ button, input { color: inherit; font: inherit; }
 .topbar > p { margin: 0; color: rgba(255,255,255,.68); font-family: Georgia, "Songti SC", serif; font-size: .86rem; letter-spacing: .16em; }
 .lock-page { justify-self: end; padding: .45rem .8rem; border: 1px solid rgba(255,255,255,.24); background: rgba(5,7,12,.45); color: rgba(255,255,255,.72); cursor: pointer; font-size: .68rem; letter-spacing: .12em; }
 .lock-page:hover { border-color: var(--blue); color: var(--paper); }
+.manager-enter { margin-top: 1.2rem; padding: .72rem 1.1rem; border: 1px solid var(--blue); border-radius: 999px; background: var(--blue); color: #080b0a; cursor: pointer; font: inherit; }
 
 .gate { position: relative; min-height: 100svh; display: grid; align-items: end; width: min(calc(100% - 48px), var(--width)); margin: 0 auto; padding: 9rem 0 clamp(4rem, 10vh, 8rem); }
 .gate-panel { max-width: 720px; }
