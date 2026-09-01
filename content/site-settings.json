@@ -1,6 +1,6 @@
 {
   "background": "/assets/gallery/violet-evergarden.webp",
-  "wallMode": "auto",
+  "wallMode": "manual",
   "wallInterval": 8,
   "overlay": 62
 }
